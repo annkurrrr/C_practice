@@ -20,15 +20,17 @@ int main(){
         printf("%d ",arr[i]);
     }
     for(i=0;i<num;i++){
-        if(arr[i+1]-arr[i]==0 || arr[i+1]-arr[i]==1){
+        if(arr[i+1]-arr[i]==0){
+            continue;
+        }
+        if(arr[i+1]-arr[i]==1){
             count++;
         }
         else{
             if(count>lcount){
                 lcount=count;
-                i+=count-1;
-                count=1;
             }
+            count=1;
         }
     }
     printf("\n\nLength of the longest consecutive secuence is %d.",lcount);
